@@ -49,7 +49,7 @@ export default function Index() {
               <a href="#tournaments" className="hover:text-primary transition-colors">Турниры</a>
               <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
             </div>
-            <Button className="hidden md:flex">
+            <Button className="hidden md:flex" onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>
               <Icon name="Calendar" size={18} className="mr-2" />
               Забронировать
             </Button>
@@ -77,9 +77,9 @@ export default function Index() {
                   <Icon name="Gamepad2" size={20} className="mr-2" />
                   Забронировать игру
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg">
+                <Button size="lg" variant="outline" className="text-lg" onClick={() => document.getElementById('rules')?.scrollIntoView({ behavior: 'smooth' })}>
                   <Icon name="Play" size={20} className="mr-2" />
-                  Видео-обзор
+                  Правила игры
                 </Button>
               </div>
               <div className="grid grid-cols-3 gap-6 mt-12">
@@ -137,7 +137,7 @@ export default function Index() {
                     <span>2 игровых режима</span>
                   </li>
                 </ul>
-                <Button className="w-full">Выбрать</Button>
+                <Button className="w-full" onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>Выбрать</Button>
               </CardContent>
             </Card>
 
@@ -168,7 +168,7 @@ export default function Index() {
                     <span>Видеозапись игры</span>
                   </li>
                 </ul>
-                <Button className="w-full">Выбрать</Button>
+                <Button className="w-full" onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>Выбрать</Button>
               </CardContent>
             </Card>
 
@@ -202,7 +202,7 @@ export default function Index() {
                     <span>Личный инструктор</span>
                   </li>
                 </ul>
-                <Button className="w-full">Выбрать</Button>
+                <Button className="w-full" onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>Выбрать</Button>
               </CardContent>
             </Card>
           </div>
@@ -476,6 +476,64 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Геймерские моменты</h2>
+            <p className="text-xl text-muted-foreground">Мемы от наших игроков</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="bg-card border-border overflow-hidden hover:scale-105 transition-transform">
+              <img 
+                src="https://cdn.poehali.dev/projects/8638cd11-0571-4373-857d-56456a385ca6/files/6b92ebb2-92d9-4dbd-8a90-41815407e134.jpg" 
+                alt="Laser tag meme" 
+                className="w-full h-[400px] object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-2">Когда нашёл идеальное укрытие</h3>
+                <p className="text-muted-foreground">...но команда тебя всё равно не прикрывает 😅</p>
+                <div className="flex gap-4 mt-4">
+                  <Badge variant="outline" className="text-primary border-primary">
+                    <Icon name="Heart" size={14} className="mr-1" /> 342
+                  </Badge>
+                  <Badge variant="outline">
+                    <Icon name="MessageCircle" size={14} className="mr-1" /> 89
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border overflow-hidden hover:scale-105 transition-transform">
+              <img 
+                src="https://cdn.poehali.dev/projects/8638cd11-0571-4373-857d-56456a385ca6/files/087afcab-c8a4-4386-9666-db3df61c54dc.jpg" 
+                alt="Team celebration" 
+                className="w-full h-[400px] object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-2">Победа в последнюю секунду</h3>
+                <p className="text-muted-foreground">Когда вся команда в сборе и план сработал! 🔥</p>
+                <div className="flex gap-4 mt-4">
+                  <Badge variant="outline" className="text-primary border-primary">
+                    <Icon name="Heart" size={14} className="mr-1" /> 567
+                  </Badge>
+                  <Badge variant="outline">
+                    <Icon name="MessageCircle" size={14} className="mr-1" /> 124
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Icon name="Camera" size={20} className="mr-2" />
+              Создай свой мем — забронируй игру!
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section id="tournaments" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
@@ -517,7 +575,7 @@ export default function Index() {
                         <div className="text-muted-foreground">32 команды по 5 игроков</div>
                       </div>
                     </div>
-                    <Button className="w-full mt-4">
+                    <Button className="w-full mt-4" onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}>
                       Зарегистрировать команду
                     </Button>
                   </div>
@@ -548,7 +606,7 @@ export default function Index() {
                         <div className="text-muted-foreground">19:00 - 22:00</div>
                       </div>
                     </div>
-                    <Button variant="outline" className="w-full mt-4">
+                    <Button variant="outline" className="w-full mt-4" onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}>
                       Узнать подробнее
                     </Button>
                   </div>
